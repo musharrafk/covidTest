@@ -1,0 +1,14 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+#Redirect /stage https://space.arkinfo.in
+
+# Don't listing directory
+Options -Indexes
+#ErrorDocument 403 http://peopleconnect.info/
+# Follow symbolic links
+Options +FollowSymLinks
+
+# Default handler
+DirectoryIndex index.php
+RewriteRule .* index.php?/$0 [PT,L] 
